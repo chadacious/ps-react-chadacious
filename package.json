@@ -1,7 +1,8 @@
 {
-  "name": "ps-react-chadacious",
-  "version": "0.1.1",
+  "name": "ps-react-chadacious-build-template",
+  "version": "0.1.2",
   "main": "./lib/index.js",
+  "private": true,
   "engines": {
     "node": ">=6.0.0"
   },
@@ -20,7 +21,6 @@
     "toolkit",
     "medlor"
   ],
-  "private": false,
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -37,11 +37,12 @@
     "test": "node scripts/test.js --env=jsdom",
     "build:css": "cpx \"./src/components/**/*.css\" ./lib",
     "prebuild:lib": "rimraf lib",
-    "build:lib": "npm run build:commonjs && npm run build:css",
+    "build:lib": "npm-run-all --parallel build:commonjs build:css build:copy-files",
+    "build:copy-files": "node scripts/copyBuildFiles.js",
     "predeploy": "npm run build:docs",
     "deploy": "gh-pages -d build",
     "build:commonjs": "cross-env NODE_ENV=production babel ./src/components --out-dir ./lib --ignore spec.js",
-    "prepublish": "npm run build:lib"
+    "prepublish": "npm run build:lib -- technically not needed since we will run publish from the lib folder"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -141,6 +142,5 @@
     "webpack-dev-server": "2.8.2",
     "webpack-manifest-plugin": "1.2.1",
     "whatwg-fetch": "2.0.3"
-
   }
 }
