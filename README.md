@@ -8,10 +8,10 @@ npm install ps-react
 ```
 
 ## Issues
-[Here's a list of current known issues in the course](https://github.com/coryhouse/ps-react/issues).
+[Here's a list of current known issues in the course](https://github.com/chadacious/ps-react/issues).
 
 ## Docs
-[Component documentation](http://coryhouse.github.io/ps-react)
+[Component documentation](http://chadacious.github.io/ps-react-chadacious/)
 
 ## Component Hall of Fame 🎉
 Here's a list of components built by your fellow viewers!
