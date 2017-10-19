@@ -181,6 +181,7 @@ module.exports = {
                         sourceMap: shouldUseSourceMap,
                         // modules: true,
                         // localIdentName: '[name]_[local]_[hash:base64:5]'
+                      }
                     },
                     {
                       loader: require.resolve('postcss-loader'),
